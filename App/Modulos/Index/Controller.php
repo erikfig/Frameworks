@@ -34,6 +34,6 @@ class Index_Controller extends Master_Controller
      */
     public function index()
     {
-        var_dump($this->model->teste());exit;
+        $this->view->set('teste', $this->model->teste());
     }
 }
