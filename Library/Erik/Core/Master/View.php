@@ -29,7 +29,7 @@ class Master_View
     public function conteudo()
     {
         extract($this->data);
-        include ROOT.DS.'APP'.DS.'Modulos'.DS.$this->mvc['controller'].DS.'View'.DS.$this->mvc['action'].'.php';
+        include ROOT.DS.'App'.DS.'Modulos'.DS.$this->mvc['controller'].DS.'View'.DS.$this->mvc['action'].'.php';
     }
     
     public function templateUrl($string=null)
@@ -39,7 +39,7 @@ class Master_View
     
     public function __destruct()
     {
-        include ROOT.DS.'APP'.DS.'Templates'.DS.'Default'.DS.'index.php';
+        include ROOT.DS.'App'.DS.'Templates'.DS.'Default'.DS.'index.php';
         exit;
     }
 }
