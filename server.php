@@ -2,15 +2,15 @@
 
 require 'bootstrap.php';
 
-use WebDevBr\Config\App;
+use App\Config\Config;
 
-$config = App::getServer();
+$config = Config::getServer();
 
 echo 'Servidor iniciado em '.$config['host'].':'.$config['port'].PHP_EOL;
 
 $command = '"'.PHP_BINARY.'"';
 $command .= ' -S '.$config['host'].':'.$config['port'];
 $command .= ' -t "'.$config['public_directory'].'"/';
-$command .= ' router.php';
+//$command .= ' router.php';
 
 passthru($command);

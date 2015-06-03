@@ -4,14 +4,23 @@
         "monolog/monolog": "1.2.*",
         "aura/router": "2.2.*",
         "twig/twig":"1.18.*",
+        "doctrine/orm": "2.5.*",
         "doctrine/dbal": "2.5.*",
-        "symfony/http-foundation": "2.6.8"
+        "symfony/http-foundation": "2.6.*",
+        "zendframework/zend-servicemanager": "2.3.*"
     },
     "autoload": {
         "psr-4": {
-        	"WebDevBr\\": "src/WebDevBr"
+        	"App\\": "src/App",
+            "WebDevBr\\": "src/WebDevBr"
         }
     },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.zendframework.com/"
+        }
+    ],
     "config": {
         "bin-dir": "./bin"
     }
