@@ -4,6 +4,8 @@ namespace App\Config;
 
 use App\Config\ServiceManager\Core\ModelService;
 use App\Config\ServiceManager\Core\LoaderService;
+use App\Config\ServiceManager\Core\TwigService;
+use App\Config\ServiceManager\Core\MustacheService;
 use App\Config\ServiceManager\RepositoryService;
 use Zend\ServiceManager\ServiceManager as Sm;
 
@@ -15,6 +17,8 @@ class ServiceManager
 	{
 		$service_manager->setFactory('model', new ModelService);
 		$service_manager->setFactory('loader', new LoaderService);
+		$service_manager->setFactory('twig', new TwigService);
+		//$service_manager->setFactory('mustache', new MustacheService);
 
 		$repository_service = new RepositoryService;
 

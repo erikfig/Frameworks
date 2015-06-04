@@ -11,8 +11,8 @@ class Config
 	private static $debug = true;
 
 	private static $path = [
-		'twig_templates' => 'view/',
-		'twig_cache' => 'data/cache/view/',
+		'view_templates' => 'view/',
+		'view_cache' => 'data/cache/view/',
 		'entities' => 'src/App/Entities/'
 	];
 

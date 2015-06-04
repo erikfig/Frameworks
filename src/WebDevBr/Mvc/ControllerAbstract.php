@@ -4,15 +4,15 @@ namespace WebDevBr\Mvc;
 
 use Symfony\Component\HttpFoundation\Request;
 use App\Config\Config;
-use Twig_Environment;
+use WebDevBr\Mvc\Interfaces\ViewInterface;
 
 abstract class ControllerAbstract
 {
 	private $request;
 	protected $response;
-	protected $twig;
+	protected $view;
 
-	public function init(Array $params, Request $request, Twig_Environment $twig)
+	public function init(Array $params, Request $request, ViewInterface $view)
 	{
 		$this->request = new Request(
 		    $_GET,
@@ -23,7 +23,7 @@ abstract class ControllerAbstract
 		    $_SERVER
 		);
 
-		$this->twig = $twig;
+		$this->view = $view;
 	}
 
 	protected function getRequest()
@@ -33,11 +33,10 @@ abstract class ControllerAbstract
 
 	protected function render($template, array $data = [])
 	{
-		
 		$default = [
 			'base_url'=>$this->baseUrl()
 		];
-		echo $this->twig->render($template, array_merge($default, $data));
+		echo $this->view->render($template, array_merge($default, $data));
 	}
 
 	private function baseUrl(){

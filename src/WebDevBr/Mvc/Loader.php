@@ -5,6 +5,7 @@ namespace WebDevBr\Mvc;
 use WebDevBr\Exceptions\HttpException;
 use Symfony\Component\HttpFoundation\Request;
 use Twig_Environment;
+use WebDevBr\Mvc\Interfaces\ViewInterface;
 
 class Loader
 {
@@ -33,7 +34,7 @@ class Loader
 		$this->load['action'] = $action;
 	}
 
-	public function load(Request $request, Twig_Environment $twig)
+	public function load(Request $request, ViewInterface $twig)
 	{
 		if (!class_exists($this->load['controller']))
 			throw new HttpException($this->load['controller']."  not found", 404);

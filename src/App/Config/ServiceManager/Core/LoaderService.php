@@ -8,9 +8,9 @@ use WebDevBr\Mvc\Router;
 use WebDevBr\Mvc\Loader;
 use Aura\Router\RouterFactory;
 use Symfony\Component\HttpFoundation\Request;
-use Twig_Environment;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
+use App\Config\ServiceManager;
 
 class LoaderService implements FactoryInterface
 {
@@ -27,20 +27,9 @@ class LoaderService implements FactoryInterface
 		$loader = new Loader();
 		$loader->init($params, Config::getControllerNamespace());
 
-		$paths = Config::getPath();
+		$view =ServiceManager::getServiceManager()->get('twig');
 
-		$options = [
-			'cache' => $paths['base'].$paths['twig_cache'],
-			'auto_reload'=>Config::getDebug(),
-			'debug'=>Config::getDebug()
-		];
-
-		$twig = new \Twig_Environment(
-			new \Twig_Loader_Filesystem($paths['base'].$paths['twig_templates']),
-			$options
-		);
-
-		$loader->load(new Request, $twig);
+		$loader->load(new Request, $view);
 		
 		return $loader;
 	}
