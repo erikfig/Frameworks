@@ -29,6 +29,6 @@ Você não precisa de nenhuma configuração especial para o PHP Built-in Server
 
 Você pode personalizar (alterar porta, localhost para outra coisa, o diretório publico) editando o arquivo **src/WebDevBr/Config/App.php**.
 
-[Aqui a documentação completa](https://github.com/erikfig/Frameworks/wiki)
+[Aqui a documentação completa](https://github.com/WebDevBr/Framework/wiki)
 
 Att. Erik Figueiredo
