@@ -16,7 +16,6 @@ class ServiceManager
 	public static function init(Sm $service_manager)
 	{
 		$service_manager->setFactory('model', new ModelService);
-		$service_manager->setFactory('loader', new LoaderService);
 		$service_manager->setFactory('twig', new TwigService);
 		//$service_manager->setFactory('mustache', new MustacheService);
 

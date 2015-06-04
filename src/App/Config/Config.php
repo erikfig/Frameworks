@@ -8,11 +8,12 @@ class Config
 	private static $server_port = '8080';
 	private static $server_public_directory = 'public/';
 
-	private static $debug = true;
+	private static $debug = false;
 
 	private static $path = [
 		'view_templates' => 'view/',
 		'view_cache' => 'data/cache/view/',
+		'loggin' => 'data/log/erros/',
 		'entities' => 'src/App/Entities/'
 	];
 

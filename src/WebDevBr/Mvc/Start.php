@@ -1,22 +1,20 @@
 <?php
 
-namespace App\Config\ServiceManager\Core;
+namespace WebDevBr\Mvc;
 
+use Aura\Router\RouterFactory;
+use App\Config\ServiceManager;
 use App\Config\Config;
 use App\Config\Route;
+use Symfony\Component\HttpFoundation\Request;
 use WebDevBr\Mvc\Router;
 use WebDevBr\Mvc\Loader;
-use Aura\Router\RouterFactory;
-use Symfony\Component\HttpFoundation\Request;
-use Zend\ServiceManager\FactoryInterface;
-use Zend\ServiceManager\ServiceLocatorInterface;
-use App\Config\ServiceManager;
+use Zend\ServiceManager\ServiceManager as Sm;
 
-class LoaderService implements FactoryInterface
+class Start
 {
-	public function createService(ServiceLocatorInterface $serviceLocator)
+	public function init()
 	{
-
 		Router::init(new RouterFactory);
 		Route::init();
 
@@ -27,10 +25,11 @@ class LoaderService implements FactoryInterface
 		$loader = new Loader();
 		$loader->init($params, Config::getControllerNamespace());
 
+		$service_manager = new Sm;
+		ServiceManager::init($service_manager);
+
 		$view =ServiceManager::getServiceManager()->get('twig');
 
 		$loader->load(new Request, $view);
-		
-		return $loader;
 	}
 }
