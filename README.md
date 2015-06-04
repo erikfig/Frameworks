@@ -4,7 +4,7 @@
 
 Ela se refere ao framework do [branch 2.0](https://github.com/erikfig/Frameworks/tree/2.0) e é apenas um rascunho por enquanto, ainda preciso revisar, mas já vai ajudar a muita gente, este framework é apenas um estudo e não deve ser usado em produção.
 
-Ainda não defini o nome do framework, pensei talvez em **WDBr Framework**
+O repositório desta versão está fechado para alterações, seguirei os estudos em [https://github.com/WebDevBr/Framework](https://github.com/WebDevBr/Framework)
 
 ## Instalar
 
