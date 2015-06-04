@@ -8,7 +8,7 @@ use Twig_Environment;
 
 abstract class ControllerAbstract
 {
-	protected $request;
+	private $request;
 	protected $response;
 	protected $twig;
 
@@ -24,6 +24,11 @@ abstract class ControllerAbstract
 		);
 
 		$this->twig = $twig;
+	}
+
+	protected function getRequest()
+	{
+		return $this->request;
 	}
 
 	protected function render($template, array $data = [])
