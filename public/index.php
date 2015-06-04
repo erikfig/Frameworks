@@ -12,7 +12,7 @@ use WebDevBr\Mvc\Start;
 
 $start = new Start;
 
-if (Config::getDebug()) {
+if (Config::DEBUG) {
 	$whoops = new Run;
 
 	$errorPage = new Whoops\Handler\PrettyPageHandler();

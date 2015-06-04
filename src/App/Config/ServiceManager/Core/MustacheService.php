@@ -17,7 +17,9 @@ class MustacheService implements FactoryInterface
 		$paths = Config::getPath();
 
 		$options = [
-			'loader' => new Mustache_Loader_FilesystemLoader($paths['base'].$paths['view_templates'])
+			'loader' => new Mustache_Loader_FilesystemLoader(
+				$paths['base'].$paths['view_templates']
+			)
 		];
 
 		$mustache = new Mustache_Engine(

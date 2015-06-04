@@ -23,12 +23,12 @@ class Start
 		$params = Router::match($url);
 
 		$loader = new Loader();
-		$loader->init($params, Config::getControllerNamespace());
+		$loader->init($params, Config::CONTROLLER_NAMESPACE);
 
 		$service_manager = new Sm;
 		ServiceManager::init($service_manager);
 
-		$view =ServiceManager::getServiceManager()->get('twig');
+		$view =ServiceManager::getServiceManager()->get(Config::TEMPLATE_ENGINER);
 
 		$loader->load(new Request, $view);
 	}

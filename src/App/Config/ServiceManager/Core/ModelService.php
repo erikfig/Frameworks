@@ -16,9 +16,9 @@ class ModelService implements FactoryInterface
 	{
 
 		$paths = [Config::getPath()['entities']];
-		$isDevMode = Config::getDebug();
+		$isDevMode = Config::DEBUG;
 
-		$dbParams = Database::getParams();
+		$dbParams = Database::PARAMS;
 
 		$config = Setup::createAnnotationMetadataConfiguration($paths, $isDevMode);
 		

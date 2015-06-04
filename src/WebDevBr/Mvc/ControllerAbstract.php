@@ -3,7 +3,6 @@
 namespace WebDevBr\Mvc;
 
 use Symfony\Component\HttpFoundation\Request;
-use App\Config\Config;
 use WebDevBr\Mvc\Interfaces\ViewInterface;
 
 abstract class ControllerAbstract

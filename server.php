@@ -4,13 +4,11 @@ require 'bootstrap.php';
 
 use App\Config\Config;
 
-$config = Config::getServer();
-
-echo 'Servidor iniciado em '.$config['host'].':'.$config['port'].PHP_EOL;
+echo 'Servidor iniciado em '.Config::SERVER_HOST.':'.Config::SERVER_PORT.PHP_EOL;
 
 $command = '"'.PHP_BINARY.'"';
-$command .= ' -S '.$config['host'].':'.$config['port'];
-$command .= ' -t "'.$config['public_directory'].'"/';
+$command .= ' -S '.Config::SERVER_HOST.':'.Config::SERVER_PORT;
+$command .= ' -t "'.Config::SERVER_PUBLIC_DIRECTORY.'"/';
 //$command .= ' router.php';
 
 passthru($command);

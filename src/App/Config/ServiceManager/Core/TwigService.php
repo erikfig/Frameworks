@@ -17,8 +17,8 @@ class TwigService implements FactoryInterface
 
 		$options = [
 			'cache' => $paths['base'].$paths['view_cache'],
-			'auto_reload'=>Config::getDebug(),
-			'debug'=>Config::getDebug()
+			'auto_reload'=>Config::DEBUG,
+			'debug'=>Config::DEBUG
 		];
 
 		$twig = new \Twig_Environment(
