@@ -4,44 +4,28 @@ namespace App\Config;
 
 class Config
 {
-	private static $server_host = 'localhost';
-	private static $server_port = '8080';
-	private static $server_public_directory = 'public/';
+	const SERVER_HOST = 'localhost';
+	const SERVER_PORT = '8080';
+	const SERVER_PUBLIC_DIRECTORY = 'public/';
+	const TEMPLATE_ENGINER = 'twig';
 
-	private static $debug = true;
+	const DEBUG = true;
 
-	private static $path = [
-		'twig_templates' => 'view/',
-		'twig_cache' => 'data/cache/view/',
+	const PATH = [
+		'view_templates' => 'view/',
+		'view_cache' => 'data/cache/view/',
+		'loggin' => 'data/log/erros/',
 		'entities' => 'src/App/Entities/'
 	];
 
-	private static $controller_namespace = 'App\\Controllers\\';
-
-	public static function getServer()
-	{
-		return [
-			'host'=>self::$server_host,
-			'port'=>self::$server_port,
-			'public_directory'=>self::$server_public_directory
-		];
-	}
+	const CONTROLLER_NAMESPACE = 'App\\Controllers\\';
 
 	public static function getPath()
 	{
 		$base = [
 			'base'=>__DIR__.'/../../../'
 		];
-		return array_merge(self::$path, $base);
+		return array_merge(Config::PATH, $base);
 	}
 
-	public static function getDebug()
-	{
-		return self::$debug;
-	}
-
-	public static function getControllerNamespace()
-	{
-		return self::$controller_namespace;
-	}
 }
